@@ -72,5 +72,14 @@ $farben = @{Auto = "rot"; Sand = "weiß"; Gras = "grün"; Himmel = "blau"}
 $hashtable = @{Objekt = $einObjekt; Schlüssel2 = "Schlüssel2" }
 $hashtable["Objekt"].EigenschaftZwei
 
+# Prüfen ob Datei vorhanden - Powershell Style
+# Exists = Eigenschaft, welchen Return-Wert aus .NET-Methode der Klasse File beinhaltet
+(Get-Item C:\temp\log.log).Exists
+
+# .NET-Style
+# Ansprechen der .Exists()-Methode über die .NET-Klasse File im Namespace System.IO
+[System.IO.File]::Exists("C:\temp\log.log")
+
 
 #Funktionen / Operatoren
+
