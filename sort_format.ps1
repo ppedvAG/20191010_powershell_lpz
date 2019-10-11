@@ -6,3 +6,10 @@ Get-Process | Select-Object -First 4 # Select-Object
 
 Get-EventLog -LogName System -Newest 10 | Sort-Object -Property InstanceId | Format-List -Property EntryType,Message,Source
 
+# Übung Sortieren - Selektieren
+
+# GridView -> PassThru
+Get-ADUser -Filter * | Select-Object -First 10 | Out-GridView -OutputMode Multiple | % { $_.GivenName }
+
+Get-Process | Measure-Object -Property CPU -Average -Sum
+
